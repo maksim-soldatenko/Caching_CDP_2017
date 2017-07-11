@@ -1,0 +1,30 @@
+﻿@model System.Collections.Generic.IEnumerable<CachingDemo.Models.Entry>
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>SalesOrderId</th>
+            <th>ProductId</th>
+            <th>CarrierTrackingNumber</th>
+            <th>UnitPrice</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>ProductNumber</th>
+        </tr>
+            @foreach (var entry in Model)
+            {
+                <tr>
+                    <td>@entry.SalesOrderId</td>
+                    <td>@entry.ProductId</td>
+                    <td>@entry.CarrierTrackingNumber</td>
+                    <td>@entry.UnitPrice</td>
+                    <td>@entry.Name</td>
+                    <td>@entry.Color</td>
+                    <td>@entry.ProductNumber</td>
+                </tr>
+            }
+        </thead>
+    </table>
+</div>
