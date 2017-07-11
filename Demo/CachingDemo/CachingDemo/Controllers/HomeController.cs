@@ -1,6 +1,8 @@
-﻿using CachingDemo.Models;
+﻿using System;
+using CachingDemo.Models;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 using Amazon.ElastiCacheCluster;
@@ -23,6 +25,9 @@ namespace CachingDemo.Controllers
 
         public ActionResult Index()
         {
+            var watch = new Stopwatch();
+            watch.Start();
+
             List<Entry> model = null;
 
             var cached = _client.Get<string>(CollectionName);
@@ -32,14 +37,15 @@ namespace CachingDemo.Controllers
                 model = GetFromDb().ToList();
                 var str = JsonConvert.SerializeObject(model);
                 _client.Store(StoreMode.Set, CollectionName, str);
-                ViewBag.Title = "From cache: Cache Miss";
+                watch.Stop();
+                ViewBag.Title = String.Format("From cache: Cache Miss. Time: {0}", watch.ElapsedMilliseconds);
             }
             else
             {
-
                 var obj = JsonConvert.DeserializeObject<List<Entry>>(cached);
                 model = obj;
-                ViewBag.Title = "From cache: Cache HIT";
+                watch.Stop();
+                ViewBag.Title = String.Format("From cache: Cache HIT. Time: {0}", watch.ElapsedMilliseconds);
             }
 
 
@@ -49,8 +55,10 @@ namespace CachingDemo.Controllers
 
         public ActionResult DirectFromDb()
         {
+            var watch = new Stopwatch();
+            watch.Start();
             var model = GetFromDb();
-            ViewBag.Title = "Direct From Db";
+            ViewBag.Title = String.Format("Direct From Db. Time: {0}", watch.ElapsedMilliseconds);
             return View(model);
         }
 
