@@ -1,0 +1,2 @@
+2017-07-31 21:43:21,199 [15] FATAL WebApplication1.Controllers.HomeController [(null)] - Formatted exception: Message:Fatal error. Details: args0, some words: args1, UserId: User Vasia
+2017-07-31 21:43:23,895 [10] FATAL WebApplication1.Controllers.HomeController [(null)] - Formatted exception: Message:Fatal error. Details: args0, some words: args1, UserId: User Vasia

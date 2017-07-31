@@ -1,0 +1,8 @@
+2017-07-31 21:43:13,172 [10] DEBUG WebApplication1.Controllers.HomeController [(null)] - Index called
+2017-07-31 21:43:19,751 [10] DEBUG WebApplication1.Controllers.HomeController [(null)] - Index called
+2017-07-31 21:43:20,449 [9] DEBUG WebApplication1.Controllers.HomeController [(null)] - About called
+2017-07-31 21:43:21,199 [15] FATAL WebApplication1.Controllers.HomeController [(null)] - Formatted exception: Message:Fatal error. Details: args0, some words: args1, UserId: User Vasia
+2017-07-31 21:43:21,958 [18] DEBUG WebApplication1.Controllers.HomeController [(null)] - About called
+2017-07-31 21:43:22,601 [9] DEBUG WebApplication1.Controllers.HomeController [(null)] - Index called
+2017-07-31 21:43:23,197 [16] DEBUG WebApplication1.Controllers.HomeController [(null)] - About called
+2017-07-31 21:43:23,895 [10] FATAL WebApplication1.Controllers.HomeController [(null)] - Formatted exception: Message:Fatal error. Details: args0, some words: args1, UserId: User Vasia
